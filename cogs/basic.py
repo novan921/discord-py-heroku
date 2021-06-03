@@ -68,6 +68,12 @@ class Basic(commands.Cog):
         
         await context.send(content=msg+"\n"+gif)
 
+    # command set chatbot channel
+    @commands.command()
+    async def chatbot(self, context):
+        msg = context.message.content
+        await context.send(content=msg)
+
 
 async def search_gifs(query):
     apikey = "3MYUQWVPOFEL"
