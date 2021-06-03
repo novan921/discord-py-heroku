@@ -38,8 +38,14 @@ class Basic(commands.Cog):
     # command set chatbot channel
     @commands.command()
     async def chatbot(self, context):
-        msg = context.message.content
-        await context.send(msg)
+        rcm = context.message.raw_channel_mentions
+        msg = "";
+        if not rcm:
+            msg += context.message.author.mention + " no channel mentioned"
+        else:
+            msg += rcm
+
+        await context.send(content=msg)
 
 
 async def search_gifs(query):
