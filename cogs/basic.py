@@ -19,22 +19,6 @@ class Basic(commands.Cog):
         ]
         await context.send(random.choice(res) + " " + context.message.author.mention)
 
-    # command slap
-    @commands.command()
-    async def slap(self, context):
-        mentions = context.message.mentions
-        msg = ""
-        if not mentions:
-            msg += context.message.author.mention + "... is slapping themselves?"
-        else:
-            msg += context.message.author.mention + " has slapped "
-            for mention in mentions:
-                msg += f" {mention.mention}"
-
-        gif = await search_gifs('anime slap')
-
-        await context.send(content=msg+"\n"+gif)
-
     # command kiss
     @commands.command()
     async def kiss(self, context):
@@ -48,23 +32,6 @@ class Basic(commands.Cog):
                 msg += f" {mention.mention}"
 
         gif = await search_gifs('anime kiss')
-        
-        await context.send(content=msg+"\n"+gif)
-
-    # command hug
-    @commands.command()
-    async def hug(self, context):
-        mentions = context.message.mentions
-        msg = ""
-        if not mentions:
-            msg += context.message.author.mention + "... is hugging themselves?"
-        else:
-            msg += context.message.author.mention + " has hugged "
-            for mention in mentions:
-                msg += f" {mention.mention}"
-        
-
-        gif = await search_gifs('anime hug')
         
         await context.send(content=msg+"\n"+gif)
 
