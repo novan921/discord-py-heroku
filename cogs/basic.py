@@ -72,7 +72,7 @@ class Basic(commands.Cog):
     @commands.command()
     async def chatbot(self, context):
         msg = context.message.content
-        await context.send(content=msg)
+        await context.send(msg)
 
 
 async def search_gifs(query):
