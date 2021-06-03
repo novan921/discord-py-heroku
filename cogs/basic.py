@@ -38,12 +38,14 @@ class Basic(commands.Cog):
     # command set chatbot channel
     @commands.command()
     async def chatbot(self, context):
-        rcm = context.message.raw_channel_mentions
+        rcms = context.message.raw_channel_mentions
         msg = "";
-        if not rcm:
+        if not rcms:
             msg += context.message.author.mention + " no channel mentioned"
         else:
-            msg += rcm
+            msg += context.message.author.mention + " "
+            for rcm in rcms:
+                msg += f" {rcm.rcms}"
 
         await context.send(content=msg)
 
